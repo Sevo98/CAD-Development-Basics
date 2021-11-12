@@ -56,7 +56,7 @@ namespace CAD_Development_Basics
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(154, 12);
+            this.label1.Location = new System.Drawing.Point(12, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 17);
             this.label1.TabIndex = 0;
@@ -65,7 +65,7 @@ namespace CAD_Development_Basics
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(140, 44);
+            this.label2.Location = new System.Drawing.Point(12, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(141, 17);
             this.label2.TabIndex = 1;
@@ -74,7 +74,7 @@ namespace CAD_Development_Basics
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(95, 78);
+            this.label3.Location = new System.Drawing.Point(12, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(186, 17);
             this.label3.TabIndex = 2;
@@ -83,7 +83,7 @@ namespace CAD_Development_Basics
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 112);
+            this.label4.Location = new System.Drawing.Point(12, 117);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(269, 17);
             this.label4.TabIndex = 3;
@@ -92,7 +92,7 @@ namespace CAD_Development_Basics
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 143);
+            this.label5.Location = new System.Drawing.Point(12, 149);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(263, 17);
             this.label5.TabIndex = 4;
@@ -100,7 +100,7 @@ namespace CAD_Development_Basics
             // 
             // buttonOpenDrawing
             // 
-            this.buttonOpenDrawing.Location = new System.Drawing.Point(98, 193);
+            this.buttonOpenDrawing.Location = new System.Drawing.Point(21, 193);
             this.buttonOpenDrawing.Name = "buttonOpenDrawing";
             this.buttonOpenDrawing.Size = new System.Drawing.Size(168, 35);
             this.buttonOpenDrawing.TabIndex = 10;
@@ -110,9 +110,9 @@ namespace CAD_Development_Basics
             // 
             // buttonBuild
             // 
-            this.buttonBuild.Location = new System.Drawing.Point(396, 181);
+            this.buttonBuild.Location = new System.Drawing.Point(368, 193);
             this.buttonBuild.Name = "buttonBuild";
-            this.buttonBuild.Size = new System.Drawing.Size(101, 59);
+            this.buttonBuild.Size = new System.Drawing.Size(168, 35);
             this.buttonBuild.TabIndex = 11;
             this.buttonBuild.Text = "Построить модель";
             this.buttonBuild.UseVisualStyleBackColor = true;
@@ -278,7 +278,7 @@ namespace CAD_Development_Basics
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(558, 251);
+            this.ClientSize = new System.Drawing.Size(558, 241);
             this.Controls.Add(this.numericThread);
             this.Controls.Add(this.numericHead);
             this.Controls.Add(this.numericArea);
