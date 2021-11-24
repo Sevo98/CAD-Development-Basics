@@ -46,24 +46,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Drawing.cs">
+    <Compile Include="core\Builder.cs" />
+    <Compile Include="core\KompasWrapper.cs" />
+    <Compile Include="core\Parameters.cs" />
+    <Compile Include="GUI\Drawing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Drawing.Designer.cs">
+    <Compile Include="GUI\Drawing.Designer.cs">
       <DependentUpon>Drawing.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="GUI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="GUI\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Drawing.resx">
+    <EmbeddedResource Include="GUI\Drawing.resx">
       <DependentUpon>Drawing.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -92,5 +95,6 @@
   <ItemGroup>
     <None Include="Чертеж.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
