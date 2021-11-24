@@ -1,4 +1,7 @@
-﻿namespace CAD_Development_Basics.core
+﻿using System;
+using System.Windows.Forms;
+
+namespace CAD_Development_Basics.core
 {
     public class Parameters
     {
@@ -27,13 +30,70 @@
         public int DiameterArea
         {
             get => _diameterArea;
-            set => _diameterArea = value;
+            set
+            {
+                const int minValue = 600;
+                const int maxValue = 1350;
+                try
+                {
+                    ValidateValue(value, minValue, maxValue);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Введены неправильные параметры!");
+                    throw;
+                }
+
+                _diameterArea = value;
+            }
+        }
+
+        public int HeightBody
+        {
+            get => _heightBody;
+            set
+            {
+                const int minValue = 350;
+                const int maxValue = 780;
+
+                try
+                {
+                    ValidateValue(value, minValue, maxValue);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Введены неправильные параметры!");
+                    throw;
+                }
+
+                _heightBody = value;
+            }
         }
 
         public int HeightEdge
         {
             get => _heightEdge;
-            set => _heightEdge = value;
+            set
+            {
+                const int minValue = 110;
+                const int maxValue = 240;
+                try
+                {
+                    ValidateValue(value, minValue, maxValue);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Введены неправильные параметры!");
+                    throw;
+                }
+
+                if (value >= HeightBody)
+                {
+                    throw new ArgumentException(paramName: nameof(value), message: "Высота козырька больше высоты тела!");
+                }
+
+                _heightEdge = value;
+            }
         }
 
         public int DiameterBody
@@ -42,11 +102,6 @@
             set => _diameterBody = value;
         }
 
-        public int HeightBody
-        {
-            get => _heightBody;
-            set => _heightBody = value;
-        }
 
         public int LengthVisor
         {
