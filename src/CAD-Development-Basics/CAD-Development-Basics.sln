@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAD-Development-Basics", "CAD-Development-Basics\CAD-Development-Basics.csproj", "{10881F3A-7E8A-4ACD-A98B-D39FA52C5CC9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{FEED1027-4B87-489C-A5AD-A25292019F12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kompas", "Kompas\Kompas.csproj", "{10E68D49-E2D0-4952-8CB6-D25524DE01ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{10881F3A-7E8A-4ACD-A98B-D39FA52C5CC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10881F3A-7E8A-4ACD-A98B-D39FA52C5CC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10881F3A-7E8A-4ACD-A98B-D39FA52C5CC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEED1027-4B87-489C-A5AD-A25292019F12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEED1027-4B87-489C-A5AD-A25292019F12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEED1027-4B87-489C-A5AD-A25292019F12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEED1027-4B87-489C-A5AD-A25292019F12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10E68D49-E2D0-4952-8CB6-D25524DE01ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10E68D49-E2D0-4952-8CB6-D25524DE01ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10E68D49-E2D0-4952-8CB6-D25524DE01ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10E68D49-E2D0-4952-8CB6-D25524DE01ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
