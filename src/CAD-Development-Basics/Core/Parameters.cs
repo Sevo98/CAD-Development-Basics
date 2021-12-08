@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Windows.Forms;
 
-namespace CAD_Development_Basics.core
+
+namespace Core
 {
     public class Parameters
     {
-        
 
         private int _diameterArea;
 
@@ -40,8 +39,7 @@ namespace CAD_Development_Basics.core
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Введены неправильные параметры!");
-                    throw;
+                    throw new ArgumentException("Введены неправильные параметры!");
                 }
 
                 _diameterArea = value;
@@ -62,8 +60,7 @@ namespace CAD_Development_Basics.core
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Введены неправильные параметры!");
-                    throw;
+                    throw new ArgumentException("Введены неправильные параметры!");
                 }
 
                 _heightBody = value;
@@ -83,8 +80,7 @@ namespace CAD_Development_Basics.core
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Введены неправильные параметры!");
-                    throw;
+                    throw new ArgumentException("Введены неправильные параметры!");
                 }
 
                 if (value >= HeightBody)
