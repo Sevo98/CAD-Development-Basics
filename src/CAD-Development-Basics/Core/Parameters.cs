@@ -3,6 +3,7 @@
 
 namespace Core
 {
+    //TODO: XML
     public class Parameters
     {
 

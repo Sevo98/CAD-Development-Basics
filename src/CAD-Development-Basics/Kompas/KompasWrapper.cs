@@ -4,6 +4,7 @@ using Kompas6API5;
 
 namespace Kompas
 {
+	//TODO: XML
 	public class KompasWrapper
 	{
 		/// <summary>

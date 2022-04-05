@@ -10,6 +10,7 @@ namespace CAD_Development_Basics
             InitializeComponent();
         }
 
+        //TODO:
         private void Drawing_Load(object sender, EventArgs e)
         {
 

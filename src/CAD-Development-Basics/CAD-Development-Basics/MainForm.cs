@@ -5,6 +5,7 @@ using Kompas;
 
 namespace CAD_Development_Basics
 {
+    //TODO: XML
     public partial class MainForm : Form
     {
 	    private Parameters _parameters;
@@ -24,6 +25,7 @@ namespace CAD_Development_Basics
 
         private void buttonBuild_Click(object sender, EventArgs e)
         {
+            //TODO: RSDN
             DialogResult dialogResult = MessageBox.Show("Вы уверены что хотите построить модель с данными значениями?", 
 	            "Внимание!", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
