@@ -144,6 +144,12 @@ namespace Core
             else return false;
         }
 
+        public Parameters()
+        {
+            DiameterBody = 400;
+            DepthBoltThreadHoles = 65;
+            DepthBoltHeadHoles = 15;
+        }
 
     }
 }
