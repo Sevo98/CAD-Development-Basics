@@ -146,9 +146,9 @@ namespace Core
 
         public Parameters()
         {
-            DiameterBody = 400;
-            DepthBoltThreadHoles = 65;
-            DepthBoltHeadHoles = 15;
+	        DiameterBody = 400;
+	        DepthBoltThreadHoles = 65;
+	        DepthBoltHeadHoles = 15;
         }
 
     }

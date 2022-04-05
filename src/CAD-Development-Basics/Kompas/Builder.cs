@@ -52,14 +52,14 @@ namespace Kompas
 		/// </summary>
 		private void CreateArea()
 		{
-			ksEntity planeXOY =
+			ksEntity planeXOY = 
 				_part.GetDefaultEntity((short)ksObj3dTypeEnum.o3d_planeXOY);
 			ksEntity sketch = CreateSketch(planeXOY, out var sketchDefinition);
 
 			ksDocument2D document2D = sketchDefinition.BeginEdit();
 			var xCenter = 0;
 			var yCenter = 0;
-			Circle(document2D, _parameters.DiameterArea, xCenter, yCenter);
+			Circle(document2D, _parameters.DiameterArea, xCenter,yCenter);
 
 			sketchDefinition.EndEdit();
 			Extrusion(_parameters.DepthBoltThreadHoles, sketch, true);
@@ -151,7 +151,7 @@ namespace Kompas
 			var xCenter = 0;
 			var yCenter = 0;
 			Circle(document2D, _parameters.DiameterBody, xCenter, yCenter);
-			Circle(document2D, _parameters.DiameterArea * 2, xCenter, yCenter);
+			Circle(document2D, _parameters.DiameterArea*2, xCenter, yCenter);
 			sketchDefinition.EndEdit();
 			return sketch;
 		}
@@ -163,15 +163,15 @@ namespace Kompas
 		{
 			var x = 0;
 			var y = 0;
-			ksEntity shell = _part.NewEntity((short)ksObj3dTypeEnum.o3d_shellOperation);
+			ksEntity shell = _part.NewEntity((short) ksObj3dTypeEnum.o3d_shellOperation);
 			ksShellDefinition shellDefinition = shell.GetDefinition();
 			shellDefinition.thickness = 20;
 			shellDefinition.thinType = true;
 
 			ksEntityCollection faceCollection =
 				_part.EntityCollection((short)ksObj3dTypeEnum.o3d_face);
-			var length = _parameters.HeightBody + _parameters.HeightEdge
-												+ _parameters.DepthBoltThreadHoles;
+			var length = _parameters.HeightBody + _parameters.HeightEdge 
+			                                    + _parameters.DepthBoltThreadHoles;
 			faceCollection.SelectByPoint(x, y, length);
 
 			ksEntity face = faceCollection.First();
@@ -187,7 +187,7 @@ namespace Kompas
 		private void CreateCover()
 		{
 			var offset = _parameters.HeightBody + _parameters.HeightEdge
-												+ _parameters.DepthBoltThreadHoles;
+			                                    + _parameters.DepthBoltThreadHoles;
 			var plane = ksObj3dTypeEnum.o3d_planeXOY;
 			var offsetPlane = CreateOffsetPlane(offset, plane);
 			var sketch = CreateBollardSketch(offsetPlane);
@@ -270,7 +270,7 @@ namespace Kompas
 
 			ksEntity face = faceCollection.First();
 			Fillet(face);
-
+			
 			faceX = _parameters.DiameterBody / 2;
 			faceZ = _parameters.HeightBody + _parameters.HeightEdge;
 
@@ -347,7 +347,7 @@ namespace Kompas
 				(short)ksEndTypeEnum.etBlind, length);
 
 			extrusionDefinition.directionType =
-				directly ? (short)ksDirectionTypeEnum.dtNormal : (short)ksDirectionTypeEnum.dtReverse;
+				directly ? (short) ksDirectionTypeEnum.dtNormal : (short) ksDirectionTypeEnum.dtReverse;
 
 			extrusionDefinition.SetSketch(sketch);
 			extrusion.Create();

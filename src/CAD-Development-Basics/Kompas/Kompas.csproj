@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FB815C7B-E74C-42F6-81B0-D183898BC307}</ProjectGuid>
+    <ProjectGuid>{DB012004-8398-4507-A567-C2246006EC9F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Kompas</RootNamespace>
@@ -44,16 +44,6 @@
     <Compile Include="Builder.cs" />
     <Compile Include="KompasWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CAD-Development-Basics\CAD-Development-Basics.csproj">
-      <Project>{10881f3a-7e8a-4acd-a98b-d39fa52c5cc9}</Project>
-      <Name>CAD-Development-Basics</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Core\Core.csproj">
-      <Project>{feed1027-4b87-489c-a5ad-a25292019f12}</Project>
-      <Name>Core</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Kompas6API5">
@@ -101,6 +91,12 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{feed1027-4b87-489c-a5ad-a25292019f12}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

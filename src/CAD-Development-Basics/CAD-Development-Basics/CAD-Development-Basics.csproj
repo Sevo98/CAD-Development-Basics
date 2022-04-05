@@ -87,5 +87,15 @@
   <ItemGroup>
     <None Include="Чертеж.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{feed1027-4b87-489c-a5ad-a25292019f12}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kompas\Kompas.csproj">
+      <Project>{db012004-8398-4507-a567-c2246006ec9f}</Project>
+      <Name>Kompas</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

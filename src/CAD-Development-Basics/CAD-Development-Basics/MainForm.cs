@@ -1,19 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Core;
+using Kompas;
 
 namespace CAD_Development_Basics
 {
     public partial class MainForm : Form
     {
+	    private Parameters _parameters;
         public MainForm()
         {
             InitializeComponent();
+            _parameters = new Parameters();
         }
 
         private void buttonOpenDrawing_Click(object sender, EventArgs e)
@@ -23,17 +21,25 @@ namespace CAD_Development_Basics
         }
 
 
+
         private void buttonBuild_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Вы уверены что хотите построить модель с данными значениями?", "Внимание!", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Вы уверены что хотите построить модель с данными значениями?", 
+	            "Внимание!", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                //....
+	            _parameters.HeightBody = (int)numericBody.Value;
+	            _parameters.HeightEdge = (int)numericVisor.Value;
+                _parameters.DiameterArea = (int)numericArea.Value;
+	            _parameters.DiameterBoltHeadHoles = (int)numericHead.Value;
+	            _parameters.DiameterBoltThreadHoles = (int)numericThread.Value;
+                var builder = new Builder(_parameters);
+                builder.BuildModel();
             }
             else if (dialogResult == DialogResult.No)
             {
                 //...
             }
         }
-    }
+	}
 }
