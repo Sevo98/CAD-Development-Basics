@@ -14,15 +14,21 @@ namespace CAD_Development_Basics
             InitializeComponent();
             _parameters = new Parameters();
         }
-
+        /// <summary>
+        /// Открытие окна с чертежем
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonOpenDrawing_Click(object sender, EventArgs e)
         {
             Drawing drawing = new Drawing();
             drawing.Show();
         }
-
-
-
+        /// <summary>
+        /// Построение детали
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonBuild_Click(object sender, EventArgs e)
         {
             //TODO: RSDN
@@ -38,12 +44,12 @@ namespace CAD_Development_Basics
                 var builder = new Builder(_parameters);
                 builder.BuildModel();
             }
-            else if (dialogResult == DialogResult.No)
-            {
-                //...
-            }
         }
-
+        /// <summary>
+        /// Построение детали с дополнительным функционалом
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void CheckBoxCylinder_CheckedChanged(object sender, EventArgs e)
 		{
 			_parameters.CylinderEdge = checkBoxCylinder.Checked;

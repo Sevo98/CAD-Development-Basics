@@ -4,29 +4,64 @@
 namespace Core
 {
     //TODO: XML
+    /// <summary>
+    /// Список параметров детали
+    /// </summary>
     public class Parameters
     {
-
+        /// <summary>
+        /// Диаметр площадки тумбы
+        /// </summary>
         private int _diameterArea;
-
+       
+        /// <summary>
+        /// Высота козырька
+        /// </summary>
         private int _heightEdge;
-
+        
+        /// <summary>
+        /// Диаметр тела тумбы
+        /// </summary>
         private int _diameterBody;
-
+        
+        /// <summary>
+        /// Высота тела тумбы
+        /// </summary>
         private int _heightBody;
-
+       
+        /// <summary>
+        /// Длина козырька
+        /// </summary>
         private int _lengthVisor;
-
+       
+        /// <summary>
+        /// Высота козырька
+        /// </summary>
         private int _heightVisor;
-
+       
+        /// <summary>
+        /// Диаметр отверствия для головки болта
+        /// </summary>
         private int _diameterBoltHeadHoles;
-
+       
+        /// <summary>
+        /// Глубина отверстия для головки болта
+        /// </summary>
         private int _depthBoltHeadHoles;
-
+        
+        /// <summary>
+        /// Глубина отверстия для резьбы болта
+        /// </summary>
         private int _depthBoltThreadHoles;
-
+        
+        /// <summary>
+        /// Диаметр отверстия для резьбы болта
+        /// </summary>
         private int _diameterBoltThreadHoles;
-
+       
+        /// <summary>
+        /// Проверка диаметра площадки
+        /// </summary>
         public int DiameterArea
         {
             get => _diameterArea;
@@ -47,6 +82,9 @@ namespace Core
             }
         }
 
+        /// <summary>
+        /// Проверка высоты тела
+        /// </summary>
         public int HeightBody
         {
             get => _heightBody;
@@ -68,6 +106,9 @@ namespace Core
             }
         }
 
+        /// <summary>
+        /// Проверка высоты козырька
+        /// </summary>
         public int HeightEdge
         {
             get => _heightEdge;
@@ -138,6 +179,13 @@ namespace Core
 
         public bool CylinderEdge { set; get; }
 
+        /// <summary>
+        /// Метод проверки максимальных и минимальных значений
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="minValue"></param>
+        /// <param name="maxValue"></param>
+        /// <returns></returns>
         private bool ValidateValue(int value, int minValue, int maxValue)
         {
             if (minValue <= value || maxValue >= value)
@@ -147,6 +195,9 @@ namespace Core
             else return false;
         }
 
+        /// <summary>
+        /// Перегруженный конструктор с параметрами по умолчанию
+        /// </summary>
         public Parameters()
         {
 	        DiameterBody = 400;
