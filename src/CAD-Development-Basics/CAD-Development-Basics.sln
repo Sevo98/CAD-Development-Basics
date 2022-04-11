@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kompas", "Kompas\Kompas.csp
 		{10881F3A-7E8A-4ACD-A98B-D39FA52C5CC9} = {10881F3A-7E8A-4ACD-A98B-D39FA52C5CC9}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StressTest", "StressTest\StressTest\StressTest.csproj", "{EB349277-2198-4BAF-AD4A-A973E8FBA2FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{DB012004-8398-4507-A567-C2246006EC9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB012004-8398-4507-A567-C2246006EC9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB012004-8398-4507-A567-C2246006EC9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB349277-2198-4BAF-AD4A-A973E8FBA2FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB349277-2198-4BAF-AD4A-A973E8FBA2FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB349277-2198-4BAF-AD4A-A973E8FBA2FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB349277-2198-4BAF-AD4A-A973E8FBA2FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
