@@ -5,6 +5,9 @@ using Kompas6API5;
 namespace Kompas
 {
 	//TODO: XML
+	/// <summary>
+	/// Класс для связи с КОМПАС-3D
+	/// </summary>
 	public class KompasWrapper
 	{
 		/// <summary>

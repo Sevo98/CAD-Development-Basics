@@ -43,5 +43,10 @@ namespace CAD_Development_Basics
                 //...
             }
         }
+
+		private void CheckBoxCylinder_CheckedChanged(object sender, EventArgs e)
+		{
+			_parameters.CylinderEdge = checkBoxCylinder.Checked;
+		}
 	}
 }

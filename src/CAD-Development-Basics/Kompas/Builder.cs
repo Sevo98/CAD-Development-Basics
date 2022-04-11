@@ -64,7 +64,7 @@ namespace Kompas
 			sketchDefinition.EndEdit();
 			Extrusion(_parameters.DepthBoltThreadHoles, sketch, true);
 		}
-
+		
 		/// <summary>
 		/// Построитель тела тумбы
 		/// </summary>
@@ -73,7 +73,8 @@ namespace Kompas
 			var offset = _parameters.DepthBoltThreadHoles;
 			var plane = ksObj3dTypeEnum.o3d_planeXOY;
 			ksEntity offsetPlane = CreateOffsetPlane(offset, plane);
-			var bollard = CreateBollardSketch(offsetPlane);
+			var bollard = _parameters.CylinderEdge ? 
+				CreateCylinderSketch(offsetPlane) : CreateBollardSketch(offsetPlane);
 
 			var height = _parameters.HeightBody + _parameters.HeightEdge;
 			Extrusion(height, bollard, true);
@@ -139,6 +140,19 @@ namespace Kompas
 
 			return sketch;
 		}
+
+		private ksEntity CreateCylinderSketch(ksEntity plane)
+		{
+			ksEntity sketch = CreateSketch(plane, out var sketchDefinition);
+			ksDocument2D document2D = sketchDefinition.BeginEdit();
+			var xCenter = 0;
+			var yCenter = 0;
+			Circle(document2D, _parameters.DiameterBody * 1.5, xCenter, yCenter);
+			sketchDefinition.EndEdit();
+			return sketch;
+
+		}
+
 		/// <summary>
 		/// Построитель ножки тумбы
 		/// </summary>
@@ -190,7 +204,8 @@ namespace Kompas
 			                                    + _parameters.DepthBoltThreadHoles;
 			var plane = ksObj3dTypeEnum.o3d_planeXOY;
 			var offsetPlane = CreateOffsetPlane(offset, plane);
-			var sketch = CreateBollardSketch(offsetPlane);
+			var sketch = _parameters.CylinderEdge ?
+				CreateCylinderSketch(offsetPlane) : CreateBollardSketch(offsetPlane);
 			var length = 20;
 			Extrusion(length, sketch, false);
 
@@ -270,9 +285,17 @@ namespace Kompas
 
 			ksEntity face = faceCollection.First();
 			Fillet(face);
-			
-			faceX = _parameters.DiameterBody / 2;
-			faceZ = _parameters.HeightBody + _parameters.HeightEdge;
+
+			if (_parameters.CylinderEdge)
+			{
+				faceZ = _parameters.HeightBody + _parameters.HeightEdge;
+				faceX = 300;
+			}
+			else
+			{
+				faceX = -275;
+				faceZ = _parameters.HeightBody + _parameters.HeightEdge;
+			}
 
 			faceCollection =
 				_part.EntityCollection((short)ksObj3dTypeEnum.o3d_face);
@@ -293,7 +316,7 @@ namespace Kompas
 			ksFilletDefinition filletDefinition = fillet.GetDefinition();
 
 			filletDefinition.radius = 10;
-			filletDefinition.tangent = false;
+			filletDefinition.tangent = true;
 
 			ksEntityCollection entityCollectionFillet = filletDefinition.array();
 			entityCollectionFillet.Add(face);
@@ -330,6 +353,7 @@ namespace Kompas
 				(short)ksCurveStyleEnum.ksCSNormal);
 			return circle;
 		}
+		
 
 		/// <summary>
 		/// Метод выдавливания

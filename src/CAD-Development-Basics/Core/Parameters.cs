@@ -136,6 +136,8 @@ namespace Core
             set => _diameterBoltThreadHoles = value;
         }
 
+        public bool CylinderEdge { set; get; }
+
         private bool ValidateValue(int value, int minValue, int maxValue)
         {
             if (minValue <= value || maxValue >= value)
@@ -150,6 +152,7 @@ namespace Core
 	        DiameterBody = 400;
 	        DepthBoltThreadHoles = 65;
 	        DepthBoltHeadHoles = 15;
+	        CylinderEdge = false;
         }
 
     }

@@ -46,6 +46,7 @@ namespace CAD_Development_Basics
 			this.numericArea = new System.Windows.Forms.NumericUpDown();
 			this.numericHead = new System.Windows.Forms.NumericUpDown();
 			this.numericThread = new System.Windows.Forms.NumericUpDown();
+			this.checkBoxCylinder = new System.Windows.Forms.CheckBox();
 			((System.ComponentModel.ISupportInitialize)(this.numericVisor)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericBody)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericArea)).BeginInit();
@@ -105,7 +106,7 @@ namespace CAD_Development_Basics
 			// 
 			// buttonOpenDrawing
 			// 
-			this.buttonOpenDrawing.Location = new System.Drawing.Point(16, 157);
+			this.buttonOpenDrawing.Location = new System.Drawing.Point(12, 184);
 			this.buttonOpenDrawing.Margin = new System.Windows.Forms.Padding(2);
 			this.buttonOpenDrawing.Name = "buttonOpenDrawing";
 			this.buttonOpenDrawing.Size = new System.Drawing.Size(126, 28);
@@ -116,7 +117,7 @@ namespace CAD_Development_Basics
 			// 
 			// buttonBuild
 			// 
-			this.buttonBuild.Location = new System.Drawing.Point(276, 157);
+			this.buttonBuild.Location = new System.Drawing.Point(276, 184);
 			this.buttonBuild.Margin = new System.Windows.Forms.Padding(2);
 			this.buttonBuild.Name = "buttonBuild";
 			this.buttonBuild.Size = new System.Drawing.Size(126, 28);
@@ -290,12 +291,24 @@ namespace CAD_Development_Basics
             0,
             0});
 			// 
+			// checkBoxCylinder
+			// 
+			this.checkBoxCylinder.AutoSize = true;
+			this.checkBoxCylinder.Location = new System.Drawing.Point(12, 148);
+			this.checkBoxCylinder.Name = "checkBoxCylinder";
+			this.checkBoxCylinder.Size = new System.Drawing.Size(158, 17);
+			this.checkBoxCylinder.TabIndex = 22;
+			this.checkBoxCylinder.Text = "Цилиндрический козырёк";
+			this.checkBoxCylinder.UseVisualStyleBackColor = true;
+			this.checkBoxCylinder.CheckedChanged += new System.EventHandler(this.CheckBoxCylinder_CheckedChanged);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.ClientSize = new System.Drawing.Size(418, 196);
+			this.ClientSize = new System.Drawing.Size(418, 223);
+			this.Controls.Add(this.checkBoxCylinder);
 			this.Controls.Add(this.numericThread);
 			this.Controls.Add(this.numericHead);
 			this.Controls.Add(this.numericArea);
@@ -347,6 +360,7 @@ namespace CAD_Development_Basics
         private System.Windows.Forms.NumericUpDown numericArea;
         private System.Windows.Forms.NumericUpDown numericHead;
         private System.Windows.Forms.NumericUpDown numericThread;
-    }
+		private System.Windows.Forms.CheckBox checkBoxCylinder;
+	}
 }
 
