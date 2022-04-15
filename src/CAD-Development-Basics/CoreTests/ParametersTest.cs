@@ -72,7 +72,7 @@ namespace CoreTests
             Assert.AreEqual(expected, actual, "fail");
         }
 
-        [TestCase(TestName = "diameter body test correct set")]
+        [TestCase(TestName = "height body test correct set")]
         public void HeightBodyTest_Set_CorrectValue()
         {
             //setup
@@ -87,12 +87,50 @@ namespace CoreTests
             Assert.AreEqual(expected, actual, "fail");
         }
 
-        [TestCase(1000, TestName = "diameter area test incorrect more value")]
-        [TestCase(100, TestName = "diameter area test incorrect less value")]
-        public void HeightBodyTes_Set_IncorrectValue(int value)
+        [TestCase(1000, TestName = "height body test incorrect more value")]
+        [TestCase(100, TestName = "height body test incorrect less value")]
+        public void HeightBodyTest_Set_IncorrectValue(int value)
         {
             Assert.Throws<ArgumentException>(() => ParametersEmpty.HeightBody = value, "fail");
         }
+        
+        [TestCase(TestName = "height edge test correct set")]
+        public void HeightEdgeTest_Set_CorrectValue()
+        {
+            //setup
+            int expected = 200;
+            Parameters parameters = ParametersEmpty;
+            parameters.HeightEdge = expected;
 
+            //act
+            int actual = parameters.HeightEdge;
+
+            //assert
+            Assert.AreEqual(expected, actual, "fail");
+        }
+
+        [TestCase(TestName = "height edge >= height body test correct set")]
+        public void HeightEdgeTestAndHeightBody_Set_CorrectValue()
+        {
+            //setup
+            int expectedBody = 350;
+            int expectedEdge = 240;
+            Parameters parameters = ParametersEmpty;
+            parameters.HeightBody = expectedBody;
+            parameters.HeightEdge = expectedEdge;
+
+            //act
+            int actual = parameters.HeightEdge;
+
+            //assert
+            Assert.AreEqual(expectedEdge, actual, "fail");
+        }
+
+        [TestCase(1000, TestName = "height edge test incorrect more value")]
+        [TestCase(100, TestName = "height edge test incorrect less value")]
+        public void HeightEdgeTest_Set_IncorrectValue(int value)
+        {
+            Assert.Throws<ArgumentException>(() => ParametersEmpty.HeightBody = value, "fail");
+        }
     }
 }
