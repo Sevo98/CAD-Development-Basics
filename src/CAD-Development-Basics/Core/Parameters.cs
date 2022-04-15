@@ -69,14 +69,6 @@ namespace Core
             {
                 const int minValue = 600;
                 const int maxValue = 1350;
-                //try
-                //{
-                //    ValidateValue(value, minValue, maxValue);
-                //}
-                //catch (Exception e)
-                //{
-                //    throw new ArgumentException("Введены неправильные параметры!");
-                //}
 
                 if (!ValidateValue(value, minValue, maxValue))
                 {
@@ -98,11 +90,7 @@ namespace Core
                 const int minValue = 350;
                 const int maxValue = 780;
 
-                try
-                {
-                    ValidateValue(value, minValue, maxValue);
-                }
-                catch (Exception e)
+                if (!ValidateValue(value, minValue, maxValue))
                 {
                     throw new ArgumentException("Введены неправильные параметры!");
                 }

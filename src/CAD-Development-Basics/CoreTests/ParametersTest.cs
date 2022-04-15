@@ -37,19 +37,6 @@ namespace CoreTests
             Assert.AreEqual(expected, actual, "fail");
         }
 
-        [TestCase(TestName = "height body test get")]
-        public void HeightBodyTest_Get()
-        {
-            //setup
-            int expected = 600;
-
-            //act
-            int actual = Parameters.HeightBody;
-
-            //assert
-            Assert.AreEqual(expected, actual, "fail");
-        }
-
         [TestCase(TestName = "diameter area test correct set")]
         public void DiameterAreaTest_Set_CorrectValue()
         {
@@ -65,11 +52,47 @@ namespace CoreTests
             Assert.AreEqual(expected, actual, "fail");
         }
 
-        [TestCase(2000,TestName = "diameter area test incorrect more value")]
+        [TestCase(2000, TestName = "diameter area test incorrect more value")]
         [TestCase(100, TestName = "diameter area test incorrect less value")]
         public void DiameterAreaTest_Set_IncorrectValue(int value)
         {
             Assert.Throws<ArgumentException>(() => ParametersEmpty.DiameterArea = value, "fail");
         }
+
+        [TestCase(TestName = "height body test get")]
+        public void HeightBodyTest_Get()
+        {
+            //setup
+            int expected = 600;
+
+            //act
+            int actual = Parameters.HeightBody;
+
+            //assert
+            Assert.AreEqual(expected, actual, "fail");
+        }
+
+        [TestCase(TestName = "diameter body test correct set")]
+        public void HeightBodyTest_Set_CorrectValue()
+        {
+            //setup
+            int expected = 500;
+            Parameters parameters = ParametersEmpty;
+            parameters.HeightBody = expected;
+
+            //act
+            int actual = parameters.HeightBody;
+
+            //assert
+            Assert.AreEqual(expected, actual, "fail");
+        }
+
+        [TestCase(1000, TestName = "diameter area test incorrect more value")]
+        [TestCase(100, TestName = "diameter area test incorrect less value")]
+        public void HeightBodyTes_Set_IncorrectValue(int value)
+        {
+            Assert.Throws<ArgumentException>(() => ParametersEmpty.HeightBody = value, "fail");
+        }
+
     }
 }
