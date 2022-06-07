@@ -130,7 +130,7 @@ namespace CoreTests
         [TestCase(100, TestName = "height edge test incorrect less value")]
         public void HeightEdgeTest_Set_IncorrectValue(int value)
         {
-            Assert.Throws<ArgumentException>(() => ParametersEmpty.HeightBody = value, "fail");
+            Assert.Throws<ArgumentException>(() => ParametersEmpty.HeightEdge = value, "fail");
         }
     }
 }

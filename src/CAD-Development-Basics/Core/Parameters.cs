@@ -115,10 +115,10 @@ namespace Core
                     throw new ArgumentException("Введены неправильные параметры!");
                 }
 
-                if (value >= HeightBody)
-                {
-                    throw new ArgumentException(paramName: nameof(value), message: "Высота козырька больше высоты тела!");
-                }
+                //if (value >= HeightBody)
+                //{
+                //    throw new ArgumentException(paramName: nameof(value), message: "Высота козырька больше высоты тела!");
+                //}
 
                 _heightEdge = value;
             }
@@ -128,13 +128,6 @@ namespace Core
         {
             get => _diameterBody;
             set => _diameterBody = value;
-        }
-
-
-        public int LengthVisor
-        {
-            get => _lengthVisor;
-            set => _lengthVisor = value;
         }
 
         public int HeightVisor
